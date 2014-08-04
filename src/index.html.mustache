@@ -3,17 +3,31 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <script src="node_modules/polymer/platform.js"></script>
-    <link rel="import" href="node_modules/polymer/polymer.html">
-    <link rel="import" href="node_modules/ui-toolkit/build/ui-toolkit.html">
+    <script src="../node_modules/polymer/platform.js"></script>
+    <link rel="import" href="../node_modules/polymer/polymer.html">
+    <link rel="import" href="../node_modules/ui-toolkit/build/ui-toolkit.html">
     <style>
     </style>
   </head>
   <body unresolved>
-    {{#each markdown_files}}
-      <ui-markdown>
-        <link rel="import" href="{{.}}">
-      </ui-markdown>
-    {{/each}}
+    <container>
+      <ui-sidebar>
+        <ui-toc>
+        </ui-toc>
+      </ui-sidebar>
+      {{#each markdown_files}}
+        <ui-markdown>
+<link rel="import" href="{{.}}">
+        </ui-markdown>
+      {{/each}}
+    </container>
   </body>
+  <script>
+    document.addEventListener('polymer-ready', function() {
+      document.querySelector('ui-sidebar').hide();
+    });
+    document.querySelector('ui-sidebar').addEventListener('tocjump', function(){
+      document.querySelector('ui-sidebar').hide();
+    });
+  </script>
 </html>

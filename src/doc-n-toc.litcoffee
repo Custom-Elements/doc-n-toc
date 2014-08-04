@@ -37,7 +37,7 @@ Command line wrapper.
           callback e
     ,
       (template, callback) ->
-        builder({'--quiet': false, '--source': true, '--cwd': path.join(__dirname, 'index.html')}) template, callback
+        builder({'--quiet': false, '--source': path.join(__dirname, 'index.html')}) template, callback
     ,
       (final, callback) ->
         process.stdout.write final
