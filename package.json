@@ -21,7 +21,7 @@
     "docopt": "^0.4.0",
     "handlebars": "^2.0.0-alpha.4",
     "lodash": "^2.4.1",
-    "polymer": "git://github.com/custom-elements/polymer",
+    "polymer": "git+https://github.com/custom-elements/polymer",
     "polymer-build": "~0.0.16",
     "ui-toolkit": "~0.0.38"
   }
